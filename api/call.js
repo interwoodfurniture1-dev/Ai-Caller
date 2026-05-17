@@ -30,9 +30,19 @@ export default async function handler(req, res) {
       body: JSON.stringify(payload)
     });
 
-    const data = await response.json();
+    const rawText = await response.text();
+
+    let data;
+    try { data = JSON.parse(rawText); }
+    catch { data = { raw: rawText }; }
+
+    console.log('Ringg AI status:', response.status);
+    console.log('Ringg AI response:', rawText);
+
     return res.status(response.status).json(data);
+
   } catch (err) {
-    return res.status(500).json({ error: 'Failed to connect to Ringg AI' });
+    console.error('Fetch error:', err.message);
+    return res.status(500).json({ error: err.message });
   }
 }
