@@ -3,10 +3,15 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, phone } = req.body;
+  let { name, phone } = req.body;
 
   if (!name || !phone) {
     return res.status(400).json({ error: 'Name and phone are required' });
+  }
+
+  phone = phone.trim();
+  if (!phone.startsWith('+')) {
+    phone = '+91' + phone;
   }
 
   const API_KEY = '42d875f1-0ec9-41e0-83a6-600bc132ab38';
