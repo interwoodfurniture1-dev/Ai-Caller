@@ -14,8 +14,8 @@ export default async function handler(req, res) {
     phone = '+91' + phone;
   }
 
-  const API_KEY = '42d875f1-0ec9-41e0-83a6-600bc132ab38';
-  const ASSISTANT_ID = 'bbfe1819-66c2-4acf-951a-2ae260387f94';
+  const API_KEY = '09844d31-8dfe-43ed-a214-78106fa80ca2';
+  const ASSISTANT_ID = '815348d9-5502-40df-8901-4d473c47cd97';
   const FROM_NUMBER_ID = 'ffc7dd03-3a4d-46ef-9aab-5aba0699ad36';
 
   const payload = {
