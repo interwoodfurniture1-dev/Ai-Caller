@@ -21,7 +21,7 @@ export default async function handler(req, res) {
   };
 
   try {
-    const response = await fetch('https://api.ringg.ai/calling/outbound/individual', {
+    const response = await fetch('https://prod-api.ringg.ai/ca/api/v0/calling/outbound/individual', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
