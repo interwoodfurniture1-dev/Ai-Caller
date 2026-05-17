@@ -14,10 +14,14 @@ export default async function handler(req, res) {
   const FROM_NUMBER_ID = '2268095634';
 
   const payload = {
-    recipient_phone: phone,
-    assistant_id: ASSISTANT_ID,
+    name: name,
+    mobile_number: phone,
+    agent_id: ASSISTANT_ID,
     from_number_id: FROM_NUMBER_ID,
-    custom_args: { lead_name: name }
+    custom_args_values: {
+      callee_name: name,
+      mobile_number: phone
+    }
   };
 
   try {
